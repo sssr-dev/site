@@ -11,9 +11,15 @@ class Status extends React.Component{
 
     render(){
         return(
-            <h1 className={"center-text"}>
-                No status.
-            </h1>
+            <div className={"center-text"}>
+                <h1>
+                    Site status
+                </h1>
+                <br />
+                <p>
+                    Not ready.
+                </p>
+            </div>
         )
     }
 }

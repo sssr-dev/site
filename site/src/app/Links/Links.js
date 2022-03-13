@@ -11,12 +11,14 @@ class Links extends React.Component{
 
     render(){
         return(
-            <div>
-
-                <h1 className={"center-text"}>
+            <div className={"center-text"}>
+                <h1 >
                     Links generator
                 </h1>
-
+                <br />
+                <p>
+                    Not ready.
+                </p>
             </div>
         )
     }

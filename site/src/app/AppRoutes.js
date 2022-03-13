@@ -2,7 +2,7 @@ import Links from "./Links/Links";
 import Main from "./Main/Main";
 import Counters from "./Main/Counters";
 import Status from "./Main/Status";
-import {Routes, Route, Navigate} from 'react-router-dom';
+import {Routes, Route, Navigate, NavLink} from 'react-router-dom';
 import Errors from "./Main/Errors";
 
 const AppRoutes = () => {
@@ -12,8 +12,26 @@ const AppRoutes = () => {
     return (
       <div>
 
-          <header>
+          <header className={"center-text"}>
+            <nav>
 
+                <NavLink exact activeClassName={"active"} to={"/"}>
+                    Home &emsp;
+                </NavLink>
+
+                <NavLink exact activeClassName={"active"} to={"/cc"}>
+                    Link shortening &emsp;
+                </NavLink>
+
+                <NavLink exact activeClassName={"active"} to={"/status"}>
+                    Status &emsp;
+                </NavLink>
+
+                <NavLink exact activeClassName={"active"} to={"/counters"}>
+                    Counters &emsp;
+                </NavLink>
+
+            </nav>
           </header>
 
           <Routes>
@@ -34,8 +52,9 @@ const AppRoutes = () => {
 
           </Routes>
 
+          <br/>
           <footer>
-              2022 © <a href={"https://github.com/sssr-dev"}>SSSR.dev</a>
+              2022 © SSSR.dev <a href={"https://github.com/sssr-dev"}>Download this site.</a>
           </footer>
 
       </div>
