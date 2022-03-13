@@ -1,3 +1,5 @@
+import "./Links.css"
+
 const Links = (props) => {
 
     console.log("[Links]    file: src/app/Links/Links.js")
