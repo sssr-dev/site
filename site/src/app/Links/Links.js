@@ -1,19 +1,25 @@
-import "./Links.css"
+import React from "react";
 
-const Links = (props) => {
+class Links extends React.Component{
 
-    console.log("[Links]    file: src/app/Links/Links.js")
-    console.log("[Links]    props:", props)
+    componentDidMount(){
+        console.log("[Links]    file: src/app/Links/Links.js")
+        console.log("[Links]    props:", this.props)
 
-    return (
-        <div>
+        document.title = "[СССР] Link shortening"
+    }
 
-            <h1 className={"center-text"}>
-                Links generator
-            </h1>
+    render(){
+        return(
+            <div>
 
-        </div>
-    );
+                <h1 className={"center-text"}>
+                    Links generator
+                </h1>
+
+            </div>
+        )
+    }
 }
 
 export default Links;
