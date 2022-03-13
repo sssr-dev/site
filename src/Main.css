@@ -1,0 +1,31 @@
+@import 'https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto';
+
+.main-body {
+    font-family: 'Roboto', sans-serif;
+    color: #454545;
+    margin: 48px 96px;
+}
+
+.main-font-center {
+    font-family: 'Permanent Marker', cursive;
+    text-align: center;
+}
+
+div.article {
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+div.pre {
+    text-align: left;
+    margin: 24px 0;
+    padding: 24px;
+    background: #454545;
+    color: white;
+    border-bottom: 6px solid #00FF73
+}
+
+div.code {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
