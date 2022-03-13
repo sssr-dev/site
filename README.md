@@ -1,5 +1,9 @@
 # Site SSSR.dev
 
+<p align="center">
+    <img src=".readme_files/preview.png">
+</p>
+
 Create with `React.JS v16.13.2`
 
 Site map:
@@ -14,6 +18,7 @@ Site map:
 
 $ git clone https://github.com/sssr-dev/main.git
   # Cloning repo
+$ cd site
 $ npm i
   # Install all dependents
 $ npm start
