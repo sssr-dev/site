@@ -21,7 +21,7 @@ const AppRoutes = () => {
           </Routes>
 
           <footer>
-              2022 © <a href={"https://github.com/sssr-dev/main"}>SSSR.dev</a>
+              2022 © <a href={"https://github.com/sssr-dev"}>SSSR.dev</a>
           </footer>
 
       </div>
