@@ -29,7 +29,7 @@ const AppRoutes = () => {
               <Route path='/cc' element={ <Links/> }/>
 
               {/*Not found page*/}
-              <Route exact path='/error-404' element={<Errors />}/>
+              <Route exact path='/error-404' element={<Errors error={404}/>}/>
               <Route exact path='/:path' element={<Navigate to={"/error-404"}/>}/>
 
           </Routes>
