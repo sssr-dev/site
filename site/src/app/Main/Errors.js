@@ -13,11 +13,21 @@ class Errors extends React.Component{
     }
 
     render(){
+
+        const params = new URLSearchParams(window.location.search)
+
         return(
-            <h1 className={"center-text"}>
-                Page loads with error.<br/>
-                Error code: {this.props.error}
-            </h1>
+            <div className={"center-text"}>
+                <h1>
+                    Page loads with error.<br/>
+                    Error code: {this.props.error} <br/>
+                </h1>
+                {this.props.error === 404 ?
+                    <p>
+                        Link: {params.get("from")} not found on server.
+                    </p> : null
+                }
+            </div>
         )
     }
 }

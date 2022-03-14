@@ -11,6 +11,24 @@ body {
   text-align: center;
 }
 
+header{
+  width: 100%;
+  background: rgba(128, 255, 225, 0.35);
+  height: 35px;
+}
+
+.header-title{
+  font-size: 12px;
+  padding-top: 10px;
+  text-align: left;
+  padding-left: 15px;
+}
+.header-menu{
+  position: absolute;
+  top: 10px;
+  right: 100px;
+}
+
 footer {
   display: block;
   height: 10px;

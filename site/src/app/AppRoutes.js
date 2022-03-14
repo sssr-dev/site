@@ -12,26 +12,22 @@ const AppRoutes = () => {
     return (
       <div>
 
-          <header className={"center-text"}>
-            <nav>
-
-                <NavLink exact activeClassName={"active"} to={"/"}>
-                    Home &emsp;
-                </NavLink>
-
-                <NavLink exact activeClassName={"active"} to={"/cc"}>
-                    Link shortening &emsp;
-                </NavLink>
-
-                <NavLink exact activeClassName={"active"} to={"/status"}>
-                    Status &emsp;
-                </NavLink>
-
-                <NavLink exact activeClassName={"active"} to={"/counters"}>
-                    Counters &emsp;
-                </NavLink>
-
-            </nav>
+          <header>
+              <div className="header-title">SSSR.dev</div>
+              <div className="header-menu">
+                      <NavLink exact activeClassName={"active"} to={"/"}>
+                          Home
+                      </NavLink> <span>&emsp;</span>
+                      <NavLink exact activeClassName={"active"} to={"/cc"}>
+                          Link shortening
+                      </NavLink> <span>&emsp;</span>
+                      <NavLink exact activeClassName={"active"} to={"/status"}>
+                          Status
+                      </NavLink> <span>&emsp;</span>
+                      <NavLink exact activeClassName={"active"} to={"/counters"}>
+                          Counters
+                      </NavLink>
+              </div>
           </header>
 
           <Routes>
@@ -48,7 +44,7 @@ const AppRoutes = () => {
 
               {/*Not found page*/}
               <Route exact path='/error-404' element={<Errors error={404}/>}/>
-              <Route exact path='/:path' element={<Navigate to={"/error-404"}/>}/>
+              <Route exact path='/:path' element={<Navigate to={"/error-404?from="+window.location.href}/>}/>
 
           </Routes>
 
