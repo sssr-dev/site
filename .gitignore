@@ -35,14 +35,14 @@ bower_components
 .lock-wscript
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
-build/Release
+site/build/Release
 
 # Dependency directories
-node_modules/
-jspm_packages/
+site/node_modules/
+site/jspm_packages/
 
 # TypeScript v1 declaration files
-typings/
+site/typings/
 
 # TypeScript cache
 *.tsbuildinfo
@@ -54,10 +54,10 @@ typings/
 .eslintcache
 
 # Microbundle cache
-.rpt2_cache/
-.rts2_cache_cjs/
-.rts2_cache_es/
-.rts2_cache_umd/
+site/.rpt2_cache/
+site/.rts2_cache_cjs/
+site/.rts2_cache_es/
+site/.rts2_cache_umd/
 
 # Optional REPL history
 .node_repl_history
@@ -73,14 +73,14 @@ typings/
 .env.test
 
 # parcel-bundler cache (https://parceljs.org/)
-.cache
+site/.cache
 
 # Next.js build output
-.next
+site/.next
 
 # Nuxt.js build / generate output
-.nuxt
-dist
+site/.nuxt
+site/dist
 
 # Gatsby files
 .cache/
@@ -116,7 +116,6 @@ dist
 /coverage
 
 # production
-/build
 
 # misc
 .DS_Store
@@ -124,10 +123,9 @@ dist
 .env.development.local
 .env.test.local
 .env.production.local
-
-.idea
 README_r.md
 
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+/site/build/
