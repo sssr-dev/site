@@ -1,11 +1,8 @@
-import React, {useState} from "react";
-import './Links.css';
+import React from "react";
 
-const API_ENDPOINT = "https://api.sssr.dev/cc"; // Or later - process.env.REACT_APP_API_ENDPOINT;
-const API_HTTP_METHOD = "GET";
-const DEFAULT_HEADERS = {
-    "Content-Type": "application/json",
-}
+import {apiRequest} from "./LinksApi"
+
+import './Links.css';
 
 
 class Links extends React.Component{
@@ -30,8 +27,7 @@ class Links extends React.Component{
                 link: result.object,
             })
         }, (raw, error) => {
-            let message = "Unexpected error!";
-
+            let message;
             if ("error" in error){
                 message = error.error.error
             }else{
@@ -86,46 +82,3 @@ class Links extends React.Component{
 }
 
 export default Links;
-
-// Private.
-
-function apiFetch(apiParams=""){
-    /// @description Returns fetch for API.
-    return fetch(API_ENDPOINT + "?" + apiParams, {
-        method: API_HTTP_METHOD,
-        headers: DEFAULT_HEADERS
-    })
-}
-
-function apiRequestWrapper(apiParams, successHandler, errorHandler){
-    /// @description Makes API request with given handlers.
-    apiFetch(apiParams).then(raw_response => {
-        // We got 200 OK.
-        raw_response.json().then(((response) => {
-            // We got valid JSON.
-            if ("object" in response) return successHandler(raw_response, response);
-            return errorHandler(raw_response, response);
-        })).catch((error) => errorHandler(raw_response, error))
-    }).catch(errorHandler);
-}
-
-function apiRequest(params="", onSuccess=undefined, onError=undefined){
-    /// @description Makes request to API.
-    const onErrorHandler = function(raw, result){
-        /// @description Error response handler.
-        if (onError) onError(raw, result);
-        console.log(`Failed to fetch API with params "${params}" via apiRequest because of error: `);
-        console.error(raw);
-        console.error(result);
-    }
-
-    const onSuccessHandler = function(raw, result){
-        /// @description Success response handler.
-        if (onSuccess) onSuccess(raw, result);
-        console.log(`Successfully fetched API with params "${params}" via apiRequest!`);
-    }
-
-    // Requesting API.
-    console.log(`Fetching API with params "${params}" via apiRequest...`);
-    apiRequestWrapper(params, onSuccessHandler, onErrorHandler);
-}
