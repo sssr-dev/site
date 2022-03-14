@@ -21,12 +21,12 @@ header{
   font-size: 12px;
   padding-top: 10px;
   text-align: left;
-  padding-left: 15px;
+  padding-left: 40px;
 }
 .header-menu{
   position: absolute;
   top: 10px;
-  right: 100px;
+  right: 40px;
 }
 
 footer {

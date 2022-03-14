@@ -3,7 +3,7 @@ import React from "react";
 class Status extends React.Component{
 
     componentDidMount(){
-        console.log("[Status]   file: src/app/Main/Counters.js")
+        console.log("[Status]   file: src/app/Main/Status.js")
         console.log("[Status]   props:", this.props)
 
         document.title = "[СССР] Status page"

@@ -15,16 +15,16 @@ const AppRoutes = () => {
           <header>
               <div className="header-title">SSSR.dev</div>
               <div className="header-menu">
-                      <NavLink exact activeClassName={"active"} to={"/"}>
+                      <NavLink to={"/"}>
                           Home
                       </NavLink> <span>&emsp;</span>
-                      <NavLink exact activeClassName={"active"} to={"/cc"}>
+                      <NavLink to={"/cc"}>
                           Link shortening
                       </NavLink> <span>&emsp;</span>
-                      <NavLink exact activeClassName={"active"} to={"/status"}>
+                      <NavLink to={"/status"}>
                           Status
                       </NavLink> <span>&emsp;</span>
-                      <NavLink exact activeClassName={"active"} to={"/counters"}>
+                      <NavLink to={"/counters"}>
                           Counters
                       </NavLink>
               </div>
@@ -50,7 +50,8 @@ const AppRoutes = () => {
 
           <br/>
           <footer>
-              2022 © SSSR.dev <a href={"https://github.com/sssr-dev"}>Download this site.</a>
+              2022 © SSSR.dev <br/>
+              <a href={"https://t.me/SantaSpeen"}>SantaSpeen</a><span>  </span><a href={"https://github.com/sssr-dev"}>Github</a>
           </footer>
 
       </div>
