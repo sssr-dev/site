@@ -1,3 +1,10 @@
-.links-body{
+.links-error{
+    color: red;
+}
 
+.links-success{
+    color: green;
+}
+
+.links-messages{
 }
