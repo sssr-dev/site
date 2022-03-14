@@ -1,7 +1,7 @@
 # Site SSSR.dev
 
 <p align="center">
-    <img src=".readme_files/preview.png">
+    <img src=".readme_files/preview.png" alt="preview">
 </p>
 
 Create with `React.JS v16.13.2`
