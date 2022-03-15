@@ -31,27 +31,12 @@ class LinksInputForm extends React.Component{
     }
 
     render(){
-        return (<>
-            <input value={this.state.input} onChange={this.onLinkInputChange}/>
-            &nbsp;
-            <button onClick={this.onLinkShorten}>Shorten!</button>
-        </>)
-    }
-}
-
-class LinksResultMessage extends React.Component{
-    /// @description Handles showing of the result message (success / error).
-    render(){
         return (
-            <div className="links-messages">
-                {this.props.errorMessage && <span className="links-error">
-                    {this.props.errorMessage}
-                </span>}
-                {this.props.linkData && <span className="links-success">
-                    Your link: <a href={this.props.linkData.short}>{this.props.linkData.short}</a><br/>
-                    (Refers to link: <a href={this.props.linkData.url}>{this.props.linkData.url}</a>)
-                </span>}
-            </div>
+            <>
+                <input value={this.state.input} onChange={this.onLinkInputChange}/>
+                &nbsp;
+                <button onClick={this.onLinkShorten}>Shorten!</button>
+            </>
         )
     }
 }
@@ -71,13 +56,24 @@ class Links extends React.Component{
     onShortenLink(inputLink){
         const onSuccess = (raw, result) => {
             this.setState({
-                error: "",
+                error: null,
                 link: result.object,
             })
         }
 
         const onError = (raw, error) => {
-            let message = "error" in error ? error.error.error : raw.statusText;
+            let message;
+            switch (error.code){
+                case 10:
+                    message = "Invalid URL..."
+                    break;
+                case 12:
+                    message = "Input url firstly."
+                    break;
+                default:
+                    message = "Unknown error."
+            }
+
             this.setState({
                 error: message,
                 link: undefined
@@ -100,13 +96,27 @@ class Links extends React.Component{
         return(
             <div className={"center-text"}>
                 <h1>Links generator</h1>
+
                 <br/>
 
                 <LinksInputForm onShortenLink={this.onShortenLink}/>
-                <br/><br/>
 
-                <LinksResultMessage errorMessage={this.state.error} linkData={this.state.link}/>
+                <br/>
+                <br/>
 
+                <div className="links-messages">
+
+                    {this.state.error && <span className="links-error">
+                        {this.state.error}
+                    </span>}
+
+                    {this.state.link && <span className="links-success">
+                        Your link: <a href={this.state.link.short}>{this.state.link.short}</a>
+                        <br/>
+                        (Refers to link: <a href={this.state.link.url}>{this.state.link.url}</a>)
+                    </span>}
+
+                </div>
                 <br/>
                 <p>
                     Special thanks for <a href='https://github.com/kirillzhosul/'>kirillzhosul</a>.

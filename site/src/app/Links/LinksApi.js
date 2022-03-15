@@ -11,11 +11,12 @@ const DEFAULT_HEADERS = {
 }
 
 // Public.
-function apiRequest(httpMethod=API_HTTP_METHOD,
-                    getParams="",
-                    postParams=undefined,
-                    onSuccess=undefined,
-                    onError=undefined){
+function apiRequest(httpMethod = API_HTTP_METHOD,
+                    getParams = "",
+                    postParams = undefined,
+                    onSuccess  = undefined,
+                    onError = undefined){
+
     /// @description Makes request to API with handling API version.
     getParams = new URLSearchParams(getParams);
     getParams.set("v", "1.1");
@@ -53,20 +54,25 @@ function apiFetch(httpMethod, getParams, postBody, successHandler, errorHandler)
 }
 
 
-function apiRequestWrapper(httpMethod=API_HTTP_METHOD, getParams="", httpBody=undefined, onSuccess=undefined, onError=undefined){
+function apiRequestWrapper(httpMethod = API_HTTP_METHOD,
+                           getParams = "",
+                           httpBody = undefined,
+                           onSuccess = undefined,
+                           onError = undefined){
     /// @description Makes request to API.
     const onErrorHandler = function(raw, result){
         /// @description Error response handler.
         if (onError) onError(raw, result);
         console.log(`[Links API] Failed to fetch API with params "${getParams}" via apiRequest because of error: `);
+        console.error(result.error.message);
         console.error(raw);
-        console.error(result);
     }
 
     const onSuccessHandler = function(raw, result){
         /// @description Success response handler.
         if (onSuccess) onSuccess(raw, result);
         console.log(`[Links API] Successfully fetched API with params "${getParams}" via apiRequest!`);
+        console.error(raw);
     }
 
     // Requesting API.
