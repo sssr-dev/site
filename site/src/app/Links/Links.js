@@ -106,6 +106,11 @@ class Links extends React.Component{
                 <br/><br/>
 
                 <LinksResultMessage errorMessage={this.state.error} linkData={this.state.link}/>
+
+                <br/>
+                <p>
+                    Special thanks for <a href='https://github.com/kirillzhosul/'>kirillzhosul</a>.
+                </p>
             </div>
         )
     }
