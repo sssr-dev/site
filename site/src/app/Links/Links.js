@@ -19,26 +19,26 @@ class Links extends React.Component{
     }    
 
     onShortenLink(){
-        let params = new URLSearchParams();
-        params.set("create", this.state.inputLink);
-        apiRequest(params.toString(), (raw, result) => {
+        const onSuccess = (raw, result) => {
             this.setState({
                 error: "",
                 link: result.object,
             })
-        }, (raw, error) => {
-            let message;
-            if ("error" in error){
-                message = error.error.error
-            }else{
-                message = raw.statusText;
-            }
+        }
 
+        const onError = (raw, error) => {
+            let message = "error" in error ? error.error.error : raw.statusText;
             this.setState({
                 error: message,
                 link: undefined
             })
-        });
+        }
+
+        let params = {
+            "url": this.state.inputLink
+        }
+
+        apiRequest("POST", undefined, params, onSuccess, onError);
     }
 
     onInputLinkChange(event){
