@@ -32,7 +32,7 @@ class LinksInputForm extends React.Component{
 
     render(){
         return (<>
-            <input value={this.state.input} onChange={this.onLinkInputChange}></input>
+            <input value={this.state.input} onChange={this.onLinkInputChange}/>
             &nbsp;
             <button onClick={this.onLinkShorten}>Shorten!</button>
         </>)

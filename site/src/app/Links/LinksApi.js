@@ -11,10 +11,14 @@ const DEFAULT_HEADERS = {
 }
 
 // Public.
-function apiRequest(httpMethod=API_HTTP_METHOD, getParams="", postParams=undefined, onSuccess=undefined, onError=undefined){
+function apiRequest(httpMethod=API_HTTP_METHOD,
+                    getParams="",
+                    postParams=undefined,
+                    onSuccess=undefined,
+                    onError=undefined){
     /// @description Makes request to API with handling API version.
     getParams = new URLSearchParams(getParams);
-    getParams.set("v", 1.1);
+    getParams.set("v", "1.1");
     getParams = getParams.toString()
 
     postParams = new URLSearchParams(postParams);
