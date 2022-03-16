@@ -8,8 +8,10 @@ Create with `React.JS v16.13.2`
 
 Site map:
 
-1. Root - [sssr.dev](https://sssr.dev/?ref=github)
-2. Link creator - [sssr.dev/cc](https://sssr.dev/cc?ref=github) [not ready]
+1. Root - [sssr.dev](https://sssr.dev/?ref=github) [Ready]
+2. Link creator - [sssr.dev/cc](https://sssr.dev/cc?ref=github) [Ready]
+3. Site status - [sssr.dev/status](https://sssr.dev/status?ref=github) [not ready]
+4. Site counters - [sssr.dev/cc](https://sssr.dev/counters?ref=github) [not ready]
 
 ### Start
 
